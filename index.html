@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fonts">
+    <title>Product Card | Hosseinzadeh.dev</title>
+</head>
+<body>
+    
+<div class="card-container">
+
+    <div class="card">
+
+        <div class="image">
+            <img src="shoe1.png" alt="">
+        </div>
+        <div class="content">
+            <h3 class="title">کفش</h3>
+            <ul class="size">
+                <span> سایز : </span>
+                <li class="active"> 37 </li>
+                <li> 38 </li>
+                <li> 39 </li>
+                <li> 40 </li>
+            </ul>
+            <div class="price"> 380.000 - <span>700.000</span> تومان </div>
+            <a href="#"><button class="btn">خرید</button></a>
+        </div>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-search"></a>
+        </div>
+
+        <div class="colors">
+            <span class="active" style="background:#BF2227;" data-image="shoe1.png"></span>
+            <span style="background:#4481B9;" data-image="shoe2.png"></span>
+            <span style="background:#2D584E;" data-image="shoe3.png"></span>
+            <span style="background:#F0BC39;" data-image="shoe4.png"></span>
+            <span style="background:#292927;" data-image="shoe5.png"></span>
+        </div>
+
+    </div>
+</div>
+<div class="footera">
+    <h3>Coded by hosseinzadeh.dev</h3>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.size li').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    $('.colors span').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        let image = $(this).attr('data-image');
+        $('.image img').attr('src',image);
+
+        let color = $(this).css('background');
+        $('.content .btn').css('background',color);
+
+    });
+});
+</script>
+</body>
+</html>
